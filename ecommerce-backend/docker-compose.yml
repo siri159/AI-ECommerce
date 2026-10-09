@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  ecommerce-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-ecommerce-backend
+    env_file:
+      - .env
+    environment:
+      DB_URL: ${DB_URL:-jdbc:mysql://host.docker.internal:3306/ecommerce}
+      DB_USERNAME: ${DB_USERNAME:-root}
+      DB_PASSWORD: ${DB_PASSWORD:-password}
+      JWT_SECRET: ${JWT_SECRET:-change-me}
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_API_URL: ${AI_API_URL:-}
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
