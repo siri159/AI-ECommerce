@@ -89,7 +89,8 @@ public class SecurityConfig {
                 "http://localhost:5175",
                 "http://127.0.0.1:5173",
                 "http://127.0.0.1:5174",
-                "http://localhost:3000"
+                "http://localhost:3000",
+                "https://ai-e-commerce-flame.vercel.app"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
